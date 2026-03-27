@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Castle Horizons</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'surface-tint': '#e2c194',
+            'on-tertiary-fixed-variant': '#38475f',
+            'inverse-primary': '#735a35',
+            'on-primary-container': '#4f3917',
+            'on-secondary-fixed-variant': '#2f4865',
+            'surface-container-highest': '#283646',
+            'on-primary-fixed': '#291800',
+            'surface-variant': '#283646',
+            'on-background': '#d6e4f9',
+            'surface-container': '#132030',
+            'on-surface': '#d6e4f9',
+            'primary-container': '#c2a378',
+            'primary': '#e2c194',
+            'secondary-container': '#2f4865',
+            'tertiary-container': '#99a9c5',
+            'surface-container-low': '#0f1c2c',
+            'surface-container-high': '#1e2b3b',
+            'inverse-on-surface': '#243141',
+            'inverse-surface': '#d6e4f9',
+            'surface-container-lowest': '#020f1e',
+            'surface': '#061423',
+            'on-primary-fixed-variant': '#594320',
+            'surface-dim': '#061423',
+            'secondary-fixed': '#d1e4ff',
+            'surface-bright': '#2d3a4a',
+            'error': '#ffb4ab',
+            'on-primary': '#412d0c',
+            'on-surface-variant': '#d1c5b7',
+            'on-tertiary-container': '#2e3e55',
+            'on-secondary': '#17324d',
+            'on-tertiary': '#213148',
+            'error-container': '#93000a',
+            'on-error-container': '#ffdad6',
+            'outline': '#9a8f83',
+            'tertiary': '#b7c7e4',
+            'primary-fixed-dim': '#e2c194',
+            'tertiary-fixed-dim': '#b7c7e4',
+            'secondary-fixed-dim': '#afc9ea',
+            'tertiary-fixed': '#d4e3ff',
+            'on-secondary-container': '#9eb7d8',
+            'on-tertiary-fixed': '#0b1c32',
+            'outline-variant': '#4e453b',
+            'on-error': '#690005',
+            'background': '#061423',
+            'primary-fixed': '#ffddb0',
+            'on-secondary-fixed': '#001d36',
+            'secondary': '#afc9ea'
+          },
+          fontFamily: {
+            headline: ['Noto Serif'],
+            body: ['Manrope'],
+            label: ['Manrope']
+          },
+          borderRadius: {
+            DEFAULT: '0.125rem',
+            lg: '0.25rem',
+            xl: '0.5rem',
+            full: '0.75rem'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .editorial-shadow {
+      box-shadow: 0 30px 60px -12px rgba(47, 72, 101, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+  <nav class="fixed top-0 w-full z-50 bg-[#061423]/60 backdrop-blur-xl border-b border-white/5">
+    <div class="flex flex-wrap md:flex-nowrap justify-between items-center gap-4 px-6 md:px-12 py-5 max-w-[1920px] mx-auto">
+      <a href="index.html" class="text-[#e2c194] font-['Noto_Serif'] text-2xl font-black uppercase tracking-tighter">
+        Castle Horizons
+      </a>
+      <div class="hidden md:flex items-center space-x-10">
+        <a class="font-['Noto_Serif'] font-bold text-lg tracking-tight text-[#e2c194] border-b-2 border-[#e2c194] pb-1" href="#process">The Process</a>
+        <a class="font-['Noto_Serif'] font-bold text-lg tracking-tight text-[#d6e4f9] hover:text-[#e2c194] transition-colors" href="about.html">About Us</a>
+        <a class="font-['Noto_Serif'] font-bold text-lg tracking-tight text-[#d6e4f9] hover:text-[#e2c194] transition-colors" href="contact.html">Contact</a>
+      </div>
+      <a href="contact.html" class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-5 md:px-6 py-3 rounded-md font-bold hover:scale-95 transition-all duration-200 ease-in-out whitespace-nowrap">
+        Sell Your Business
+      </a>
+    </div>
+  </nav>
+
+  <main class="pt-36 md:pt-32">
+    <section class="px-12 py-24 max-w-[1920px] mx-auto grid grid-cols-12 gap-8 items-center">
+      <div class="col-span-12 lg:col-span-7">
+        <span class="uppercase tracking-[0.2em] text-primary mb-6 block font-semibold">castle horizons</span>
+        <h1 class="font-headline text-6xl md:text-8xl font-black text-on-surface tracking-tighter leading-none mb-8">
+          A Legacy <br /><span class="text-primary italic">Preserved.</span>
+        </h1>
+        <p class="text-xl text-on-surface-variant max-w-xl leading-relaxed mb-12">
+          We acquire exceptional businesses with a focus on long-term stewardship and sustainable growth. Our acquisition process is designed for speed, total confidentiality, and absolute minimal disruption to your daily operations.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center space-x-3 bg-surface-container-low px-6 py-4 rounded-lg">
+            <span class="material-symbols-outlined text-primary">speed</span>
+            <span class="font-bold text-sm uppercase tracking-wider">Fast Execution</span>
+          </div>
+          <div class="flex items-center space-x-3 bg-surface-container-low px-6 py-4 rounded-lg">
+            <span class="material-symbols-outlined text-primary">lock</span>
+            <span class="font-bold text-sm uppercase tracking-wider">Total Discretion</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 lg:col-span-5 relative">
+        <div class="aspect-[4/5] bg-surface-container rounded-xl overflow-hidden shadow-2xl">
+          <img class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:opacity-100 transition-opacity duration-700" alt="High-end modern architectural skyscraper detail with sharp glass reflections and deep shadows under a dramatic dark sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-h4d84z_CW2wfprZYngLNFCycEtHc9zaVjVa8uQkdpLyBis33ZRicWT1A0E3M_SxDnPLRhovpods9yxSCW6D3NkguNs2NmR16di4tYbhjt6r_4wlbLCmzdvCPV-gWANWxLnMj_zsXZN4FwxcrLsMhzDbH1puYYDdeSibL814AX2sgfPtHISFpz5ydSa8S4iJpZzrVtkxDjaM_AYD73IyZaDVWFFGr7tZJKsESFd6rE61_94R6oQKrPmvvaqMkHBsQC4hxzJkIr78" />
+        </div>
+        <div class="absolute -bottom-8 -left-8 p-12 bg-surface-container-high border-l-4 border-primary editorial-shadow max-w-sm">
+          <p class="font-headline text-2xl italic text-on-surface">"The cleanest exit for founders who care about what happens next."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="process" class="bg-surface-container-low py-24 md:py-32 overflow-hidden scroll-mt-32">
+      <div class="max-w-[1920px] mx-auto px-12">
+        <div class="grid grid-cols-12 gap-8">
+          <div class="col-span-12 lg:col-span-4 mb-16 lg:mb-0 self-start">
+            <div class="lg:sticky lg:top-40">
+              <h2 class="font-headline text-4xl md:text-5xl font-bold leading-[1.1] max-w-xl">
+                The Path to <br /><span class="text-primary">Permanent Capital</span>
+              </h2>
+              <div class="mt-8 space-y-6 opacity-60 max-w-md">
+                <p class="text-lg">Our 5-step framework ensures that your business values are upheld while providing the liquidity you deserve.</p>
+                <div class="h-px bg-outline-variant/20 w-32"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-12 lg:col-span-8 space-y-24 relative">
+            <div class="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-primary/40 via-primary/10 to-transparent hidden md:block"></div>
+
+            <div class="relative pl-0 md:pl-20 group">
+              <div class="absolute left-0 top-0 w-12 h-12 bg-surface-container-high rounded-full border border-primary/20 flex items-center justify-center z-10 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+                <span class="text-primary font-bold">01</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-surface-container p-10 rounded-xl hover:bg-surface-container-high transition-colors duration-500 shadow-xl">
+                <div>
+                  <span class="text-primary-container tracking-widest font-bold mb-4 block text-sm">PHASE ONE</span>
+                  <h3 class="font-headline text-3xl font-bold mb-4">Initial Outreach &amp; Confidentiality</h3>
+                  <p class="text-on-surface-variant leading-relaxed">A strictly confidential 30-minute introductory call to explore alignment. We prioritize understanding your legacy and personal goals before ever looking at a spreadsheet.</p>
+                </div>
+                <div class="flex flex-col justify-center space-y-4">
+                  <div class="flex items-center space-x-4 p-4 bg-surface-container-lowest rounded-lg border-l-2 border-primary">
+                    <span class="material-symbols-outlined text-primary">schedule</span>
+                    <span class="text-sm font-semibold">30-Minute Introduction</span>
+                  </div>
+                  <div class="flex items-center space-x-4 p-4 bg-surface-container-lowest rounded-lg border-l-2 border-primary">
+                    <span class="material-symbols-outlined text-primary">gavel</span>
+                    <span class="text-sm font-semibold">Standard NDA Protection</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative pl-0 md:pl-20 group">
+              <div class="absolute left-0 top-0 w-12 h-12 bg-surface-container-high rounded-full border border-primary/20 flex items-center justify-center z-10 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+                <span class="text-primary font-bold">02</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-surface-container p-10 rounded-xl hover:bg-surface-container-high transition-colors duration-500 shadow-xl">
+                <div>
+                  <span class="text-primary-container tracking-widest font-bold mb-4 block text-sm">PHASE TWO</span>
+                  <h3 class="font-headline text-3xl font-bold mb-4">Analysis &amp; Valuation</h3>
+                  <p class="text-on-surface-variant leading-relaxed">A high-level review of financials and the underlying business model. We look for sustainable competitive advantages and the 'moat' you've built over decades.</p>
+                </div>
+                <div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/10">
+                  <div class="flex justify-between items-center mb-4">
+                    <span class="text-xs font-bold uppercase tracking-widest text-outline">Metrics Focus</span>
+                    <span class="material-symbols-outlined text-primary/40">analytics</span>
+                  </div>
+                  <ul class="space-y-3 text-sm text-on-surface-variant">
+                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>Historical Cash Flow</li>
+                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>Customer Concentration</li>
+                    <li class="flex items-center"><span class="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>Growth Opportunities</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative pl-0 md:pl-20 group">
+              <div class="absolute left-0 top-0 w-12 h-12 bg-surface-container-high rounded-full border border-primary/20 flex items-center justify-center z-10 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+                <span class="text-primary font-bold">03</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-surface-container p-10 rounded-xl hover:bg-surface-container-high transition-colors duration-500 shadow-xl">
+                <div>
+                  <span class="text-primary-container tracking-widest font-bold mb-4 block text-sm">PHASE THREE</span>
+                  <h3 class="font-headline text-3xl font-bold mb-4">Offer &amp; LOI</h3>
+                  <p class="text-on-surface-variant leading-relaxed">No endless negotiation loops. We issue a formal Letter of Intent (LOI) outlining clear terms, price, and structure within two weeks of receiving key data.</p>
+                </div>
+                <div class="flex items-center justify-center">
+                  <div class="text-center p-8 bg-primary/10 rounded-xl border border-primary/20 w-full">
+                    <span class="text-5xl font-headline font-black text-primary block mb-2">14 Days</span>
+                    <span class="text-xs uppercase tracking-[0.3em] font-bold text-primary-container">Speed of Commitment</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative pl-0 md:pl-20 group">
+              <div class="absolute left-0 top-0 w-12 h-12 bg-surface-container-high rounded-full border border-primary/20 flex items-center justify-center z-10 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+                <span class="text-primary font-bold">04</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-surface-container p-10 rounded-xl hover:bg-surface-container-high transition-colors duration-500 shadow-xl">
+                <div>
+                  <span class="text-primary-container tracking-widest font-bold mb-4 block text-sm">PHASE FOUR</span>
+                  <h3 class="font-headline text-3xl font-bold mb-4">Due Diligence</h3>
+                  <p class="text-on-surface-variant leading-relaxed">A thorough yet streamlined 45-60 day verification process. We use a dedicated internal team to ensure your employees and customers never feel the friction of the transaction.</p>
+                </div>
+                <div class="flex flex-col space-y-3">
+                  <div class="h-2 bg-surface-container-lowest rounded-full overflow-hidden">
+                    <div class="w-3/4 h-full bg-primary"></div>
+                  </div>
+                  <div class="flex justify-between text-[10px] font-bold tracking-widest text-outline">
+                    <span>SIGNING</span>
+                    <span>VERIFICATION</span>
+                    <span>CLOSING</span>
+                  </div>
+                  <p class="text-xs italic text-on-surface-variant/70 mt-4">Focused on "Proof of Business" rather than administrative bureaucracy.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="relative pl-0 md:pl-20 group">
+              <div class="absolute left-0 top-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center z-10 hidden md:flex transition-transform duration-300 group-hover:scale-110">
+                <span class="material-symbols-outlined text-on-primary">check_circle</span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-12 bg-surface-container p-10 rounded-xl hover:bg-surface-container-high transition-colors duration-500 shadow-xl border-2 border-primary/10">
+                <div>
+                  <span class="text-primary-container tracking-widest font-bold mb-4 block text-sm">PHASE FIVE</span>
+                  <h3 class="font-headline text-3xl font-bold mb-4">Closing &amp; Transition</h3>
+                  <p class="text-on-surface-variant leading-relaxed">Transition into a long-term partnership or a full exit. We provide the permanent home your business deserves, with capital and expertise to scale the legacy you built.</p>
+                </div>
+                <div class="relative aspect-video rounded-lg overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+                  <img class="w-full h-full object-cover" alt="Abstract architectural interior of a modern boardroom with soft morning light hitting a mahogany table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4tkCYfkOuE2fOa6gqW2IFFhUq7UIqGZp3-DjK0-pLmiKR4wnROklvOBBrwsUvPRRijGaC8BeXodNz7XkeGdM6UzehwrDkJTXlkivAwZkAcqxQTwxMIOEW0vnJYd3j8lm8V1J9UQR9lGcI8TZ61KR1gkeMnr_mXdqNAxjwCuSU6ybCM4_ndyGeTNCROgZKq5f4iVNktJKvPo0yqF1HhBRWd7UtBAMDSFb6w-M23q1ERt9ScfMUNlMV9xi_O8kVXcv9x1_QI5kzHRc" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-surface-container to-transparent opacity-60"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1920px] mx-auto text-center">
+      <div class="bg-surface-container-high p-12 md:p-20 rounded-xl border border-outline-variant/10 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[100px] -mr-48 -mt-48"></div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+          <span class="uppercase tracking-[0.2em] text-primary mb-6 block font-semibold text-sm">learn more</span>
+          <h2 class="font-headline text-4xl md:text-6xl font-black tracking-tighter leading-[1.02] mb-8">
+            Explore our team and start a <span class="text-primary italic">confidential</span> conversation.
+          </h2>
+          <p class="text-xl text-on-surface-variant max-w-2xl mx-auto mb-12 leading-relaxed">
+            Learn more about Castle Horizons on our dedicated About page, or reach out directly through our Contact page.
+          </p>
+          <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6">
+            <a href="about.html" class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-10 py-5 rounded-md font-bold text-lg hover:scale-95 transition-all duration-200 inline-block">
+              Visit About Page
+            </a>
+            <a href="contact.html" class="bg-transparent border border-outline/30 text-on-surface px-10 py-5 rounded-md font-bold text-lg hover:bg-surface-container transition-all duration-200 inline-block">
+              Visit Contact Page
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#061423] w-full border-t border-[#9a8f83]/10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-[1920px] mx-auto">
+      <div class="col-span-1 md:col-span-1">
+        <div class="text-[#e2c194] font-['Noto_Serif'] text-xl font-bold uppercase mb-6">Castle Horizons</div>
+        <p class="font-['Manrope'] text-sm leading-relaxed text-[#d6e4f9]/60">
+          Permanent Capital for Lasting Legacies. We acquire and grow businesses with a forever horizon.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-['Noto_Serif'] font-bold text-[#e2c194] mb-6">Global Hubs</h4>
+        <ul class="space-y-4">
+          <li><a class="text-sm font-['Manrope'] text-[#d6e4f9]/60 hover:text-[#e2c194] transition-colors" href="#">London</a></li>
+          <li><a class="text-sm font-['Manrope'] text-[#d6e4f9]/60 hover:text-[#e2c194] transition-colors" href="#">New York</a></li>
+          <li><a class="text-sm font-['Manrope'] text-[#d6e4f9]/60 hover:text-[#e2c194] transition-colors" href="#">Singapore</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-['Noto_Serif'] font-bold text-[#e2c194] mb-6">Legal</h4>
+        <ul class="space-y-4">
+          <li><a class="text-sm font-['Manrope'] text-[#d6e4f9]/60 hover:text-[#e2c194] transition-colors" href="#">Privacy Policy</a></li>
+          <li><a class="text-sm font-['Manrope'] text-[#d6e4f9]/60 hover:text-[#e2c194] transition-colors" href="#">Terms of Service</a></li>
+          <li><a class="text-sm font-['Manrope'] text-[#d6e4f9]/60 hover:text-[#e2c194] transition-colors" href="#">Cookie Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-['Noto_Serif'] font-bold text-[#e2c194] mb-6">Legacy News</h4>
+        <div class="flex items-center bg-surface-container-low p-2 rounded">
+          <input class="bg-transparent border-none text-xs focus:ring-0 w-full text-on-surface" placeholder="Email Address" type="email" />
+          <button class="material-symbols-outlined text-primary">arrow_forward</button>
+        </div>
+      </div>
+    </div>
+    <div class="px-12 py-8 border-t border-[#9a8f83]/5 text-center">
+      <p class="font-['Manrope'] text-xs text-[#d6e4f9]/40 tracking-widest uppercase">
+        © 2024 Castle Horizons Group. Permanent Capital for Lasting Legacies.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
