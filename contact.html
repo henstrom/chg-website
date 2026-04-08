@@ -82,36 +82,51 @@
         </div>
 
         <div class="col-span-12 lg:col-span-7">
-          <div class="bg-surface-container p-8 md:p-12 rounded-xl border border-outline-variant/10 shadow-xl">
+          <form id="contact-form" novalidate class="bg-surface-container p-8 md:p-12 rounded-xl border border-outline-variant/10 shadow-xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label class="block text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3">First Name</label>
-                <input type="text" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-4 text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-0" placeholder="Your first name" />
+                <label for="field-first-name" class="block text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3">First Name</label>
+                <input id="field-first-name" name="firstName" type="text" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-4 text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-0" placeholder="Your first name" />
               </div>
               <div>
-                <label class="block text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3">Last Name</label>
-                <input type="text" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-4 text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-0" placeholder="Your last name" />
+                <label for="field-last-name" class="block text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3">Last Name</label>
+                <input id="field-last-name" name="lastName" type="text" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-4 text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-0" placeholder="Your last name" />
               </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label class="block text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3">Email</label>
-                <input type="email" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-4 text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-0" placeholder="you@company.com" />
+                <label for="field-email" class="block text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3">Email</label>
+                <input id="field-email" name="email" type="email" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-4 text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-0" placeholder="you@company.com" />
               </div>
               <div>
-                <label class="block text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3">Company</label>
-                <input type="text" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-4 text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-0" placeholder="Company name" />
+                <label for="field-company" class="block text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3">Company</label>
+                <input id="field-company" name="company" type="text" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-4 text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-0" placeholder="Company name" />
               </div>
             </div>
             <div class="mb-8">
-              <label class="block text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3">Message</label>
-              <textarea rows="6" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-4 text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-0" placeholder="Tell us a bit about your business, your timeline, and what matters most to you."></textarea>
+              <label for="field-message" class="block text-xs uppercase tracking-[0.2em] text-primary font-bold mb-3">Message</label>
+              <textarea id="field-message" name="message" rows="6" class="w-full bg-surface-container-low border border-outline-variant/20 rounded-lg px-4 py-4 text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:ring-0" placeholder="Tell us a bit about your business, your timeline, and what matters most to you."></textarea>
             </div>
             <div class="flex flex-col md:flex-row gap-4 md:gap-6 items-start md:items-center justify-between">
               <p class="text-sm text-on-surface-variant max-w-md">All inquiries are handled with strict confidentiality and reviewed directly by a senior member of the team.</p>
-              <button class="bg-gradient-to-r from-primary to-primary-container text-[#412d0c] px-8 py-4 rounded-md font-bold text-base hover:scale-95 transition-all duration-200">Submit Inquiry</button>
+              <button id="submit-btn" type="submit" class="bg-gradient-to-r from-primary to-primary-container text-[#412d0c] px-8 py-4 rounded-md font-bold text-base hover:scale-95 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100">Submit Inquiry</button>
             </div>
-          </div>
+            <div id="form-success" class="hidden mt-6 p-5 bg-primary/10 border border-primary/30 rounded-lg">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+                <div>
+                  <p class="font-bold text-primary mb-1">Message received.</p>
+                  <p class="text-on-surface-variant text-sm">A senior team member will be in touch shortly. All inquiries are handled with strict confidentiality.</p>
+                </div>
+              </div>
+            </div>
+            <div id="form-error" class="hidden mt-6 p-5 bg-red-900/20 border border-red-500/30 rounded-lg">
+              <div class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-red-400 mt-0.5">error</span>
+                <p id="form-error-msg" class="text-red-300 text-sm"></p>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -139,5 +154,83 @@
       </div>
     </div>
   </footer>
+  <script>
+    (function () {
+      // Update this to your deployed Worker URL before going live.
+      const WORKER_URL = 'https://chg-contact-worker.workers.dev';
+
+      const form       = document.getElementById('contact-form');
+      const btn        = document.getElementById('submit-btn');
+      const successBox = document.getElementById('form-success');
+      const errorBox   = document.getElementById('form-error');
+      const errorMsg   = document.getElementById('form-error-msg');
+
+      function clientValidate(d) {
+        if (!d.firstName) return 'Please enter your first name.';
+        if (!d.lastName)  return 'Please enter your last name.';
+        if (!d.email)     return 'Please enter your email address.';
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) return 'Please enter a valid email address.';
+        if (!d.message)   return 'Please include a message.';
+        return null;
+      }
+
+      function setLoading(loading) {
+        btn.disabled    = loading;
+        btn.textContent = loading ? 'Sending\u2026' : 'Submit Inquiry';
+      }
+
+      function showError(msg) {
+        errorMsg.textContent = msg;
+        errorBox.classList.remove('hidden');
+        successBox.classList.add('hidden');
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      function showSuccess() {
+        successBox.classList.remove('hidden');
+        errorBox.classList.add('hidden');
+        form.reset();
+        setLoading(false);
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        errorBox.classList.add('hidden');
+
+        const data = {
+          firstName: form.elements['firstName'].value.trim(),
+          lastName:  form.elements['lastName'].value.trim(),
+          email:     form.elements['email'].value.trim(),
+          company:   form.elements['company'].value.trim(),
+          message:   form.elements['message'].value.trim(),
+        };
+
+        const clientError = clientValidate(data);
+        if (clientError) { showError(clientError); return; }
+
+        setLoading(true);
+
+        try {
+          const resp = await fetch(WORKER_URL, {
+            method:  'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body:    JSON.stringify(data),
+          });
+          const result = await resp.json();
+
+          if (resp.ok && result.success) {
+            showSuccess();
+          } else {
+            showError(result.error ?? 'Something went wrong. Please try again or email us at office@chg.global.');
+            setLoading(false);
+          }
+        } catch {
+          showError('Network error. Please check your connection and try again.');
+          setLoading(false);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
