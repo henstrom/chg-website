@@ -5,7 +5,7 @@ const ALLOWED_ORIGINS = [
 ];
 
 const FROM_ADDRESS = 'onboarding@resend.dev';
-const TO_ADDRESS   = 'henrik@chg.global';
+const TO_ADDRESS   = 'henrik.strom00@gmail.com';
 const RESEND_URL   = 'https://api.resend.com/emails';
 
 function corsHeaders(origin) {
