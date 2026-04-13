@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html class="dark overflow-x-hidden" lang="en">
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -46,7 +46,18 @@
         <a class="font-['Noto_Serif'] font-bold text-lg tracking-tight text-[#d6e4f9] hover:text-primary transition-colors" href="about.html">About Us</a>
         <a class="font-['Noto_Serif'] font-bold text-lg tracking-tight text-[#d6e4f9] hover:text-primary transition-colors" href="contact.html">Contact</a>
       </div>
-      <a href="contact.html" class="bg-gradient-to-r from-primary to-primary-container text-[#412d0c] px-5 md:px-6 py-3 rounded-md font-bold whitespace-nowrap">Sell Your Business</a>
+      <div class="flex items-center gap-3">
+        <button id="menu-btn" class="md:hidden text-[#e2c194] p-1" aria-label="Open navigation menu">
+          <span class="material-symbols-outlined" id="menu-icon">menu</span>
+        </button>
+        <a href="contact.html" class="hidden md:inline-flex bg-gradient-to-r from-primary to-primary-container text-[#412d0c] px-5 md:px-6 py-3 rounded-md font-bold whitespace-nowrap">Sell Your Business</a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden bg-[#061423] border-t border-white/5 px-6 py-4">
+      <a class="font-['Noto_Serif'] font-bold text-lg tracking-tight text-[#d6e4f9] block py-3 border-b border-white/5" href="index.html#process">The Process</a>
+      <a class="font-['Noto_Serif'] font-bold text-lg tracking-tight text-[#d6e4f9] block py-3 border-b border-white/5" href="about.html">About Us</a>
+      <a class="font-['Noto_Serif'] font-bold text-lg tracking-tight text-[#d6e4f9] block py-3 border-b border-white/5" href="contact.html">Contact</a>
+      <a href="contact.html" class="bg-gradient-to-r from-primary to-primary-container text-[#412d0c] block text-center px-5 py-3 rounded-md font-bold mt-4">Sell Your Business</a>
     </div>
   </nav>
 
@@ -292,5 +303,22 @@
       </div>
     </div>
   </footer>
+  <script>
+    (function() {
+      var btn = document.getElementById('menu-btn');
+      var menu = document.getElementById('mobile-menu');
+      var icon = document.getElementById('menu-icon');
+      btn.addEventListener('click', function() {
+        var isHidden = menu.classList.toggle('hidden');
+        icon.textContent = isHidden ? 'menu' : 'close';
+      });
+      menu.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          menu.classList.add('hidden');
+          icon.textContent = 'menu';
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
