@@ -1,11 +1,13 @@
 const ALLOWED_ORIGINS = [
+  'https://chg.global',
+  'https://www.chg.global',
   'https://chg-website.pages.dev',
   'http://localhost:8787',
   'http://localhost:8788',
 ];
 
-const FROM_ADDRESS = 'onboarding@resend.dev';
-const TO_ADDRESS   = 'henrik.strom00@gmail.com';
+const FROM_ADDRESS = 'office@chg.global';
+const TO_ADDRESS   = 'henrik@chg.global';
 const RESEND_URL   = 'https://api.resend.com/emails';
 
 function corsHeaders(origin) {
