@@ -6,6 +6,12 @@ main = "worker.js"
 compatibility_date = "2026-09-01"
 account_id = "ef0da64eebdb2d5184dd7007e0b757af"
 
+# Custom domains (zone chg.global is on this account since 7 Sep 2026)
+routes = [
+  { pattern = "chg.global", custom_domain = true },
+  { pattern = "www.chg.global", custom_domain = true }
+]
+
 [assets]
 directory = "./public"
 binding = "ASSETS"
