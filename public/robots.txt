@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /portfolio
+Disallow: /portfolio.html
+Disallow: /privacy
+Disallow: /privacy.html
+Disallow: /magnus/
+Disallow: /api/
+
+Sitemap: https://chg.global/sitemap.xml

@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /privacy-policy.html
-
-Sitemap: https://www.chg.global/sitemap.xml

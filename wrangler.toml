@@ -1,0 +1,27 @@
+# Castle Horizon Group — chg.global
+# Deploy from this folder:  npx wrangler deploy
+# Then add custom domains (chg.global, www.chg.global) under Workers & Pages → chg-global → Settings → Domains & Routes.
+name = "chg-global"
+main = "worker.js"
+compatibility_date = "2026-09-01"
+account_id = "ef0da64eebdb2d5184dd7007e0b757af"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"
+run_worker_first = ["/api/*"]
+
+# Enquiry storage (namespace already created on the Castle AgentIQ account)
+[[kv_namespaces]]
+binding = "ENQUIRIES"
+id = "75c1b8577c374e82a7ed12004421094e"
+
+[vars]
+ENQUIRY_TO = "hello@chg.global"
+ENQUIRY_FROM = "Castle Horizon Group <enquiries@chg.global>"
+
+# Optional secrets (set once with `npx wrangler secret put NAME`):
+#   RESEND_API_KEY  — enables email notification of enquiries (verify chg.global at resend.com first)
+#   ADMIN_KEY       — protects GET /api/enquiries?key=...  (lists stored enquiries)
