@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Magnus Strøm — Castle Horizon Group</title>
+<meta name="description" content="Magnus Strøm, Founder & Managing Director, Castle Horizon Group. Save contact, WhatsApp, LinkedIn, the portfolio.">
+<meta property="og:title" content="Magnus Strøm — Castle Horizon Group">
+<meta property="og:description" content="Founder & Managing Director, Castle Horizon Group — owner of a UK supported and adapted housing group, Brighton · Dubai · Oslo.">
+<meta property="og:image" content="https://chg.global/magnus/magnus.jpg">
+<meta name="theme-color" content="#0B1622">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32.png">
+<link rel="apple-touch-icon" href="../img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Jost:wght@300;400;500&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root{
+    --ink:#0B1622; --navy:#122539; --slate:#7C8DA0; --slate-2:#A9B4C0;
+    --stone:#E8E1D5; --parchment:#F3EFE7; --parchment-2:#EBE5DA;
+    --brass:#B69460; --brass-2:#CDAA75; --text:#16212C; --text-2:#4E5B69; --line:rgba(22,33,44,.14);
+    --display:"Cormorant Garamond",Garamond,"Times New Roman",serif;
+    --sans:"Jost","Futura","Avenir Next","Helvetica Neue",Arial,sans-serif;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{min-height:100dvh;background:var(--ink) url("../img/light-floor.jpg") center top/cover no-repeat fixed;color:var(--text);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased;display:flex;justify-content:center;align-items:flex-start;padding:max(18px,env(safe-area-inset-top)) 16px 48px;position:relative}
+  body::before{content:"";position:fixed;inset:0;background:linear-gradient(180deg,rgba(11,22,34,.72),rgba(11,22,34,.92));pointer-events:none}
+  .card{position:relative;width:100%;max-width:430px;background:var(--parchment);box-shadow:0 40px 90px -40px rgba(0,0,0,.7);animation:rise .8s var(--ease) both}
+  @keyframes rise{from{transform:translateY(16px);opacity:.001}to{transform:none;opacity:1}}
+  header{background:var(--navy);padding:22px 26px 78px;display:flex;justify-content:space-between;align-items:center;position:relative}
+  header::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--brass) 30%,var(--brass) 70%,transparent);opacity:.8}
+  .brand{display:flex;align-items:center;gap:12px;color:var(--stone);text-decoration:none}
+  .brand img{height:20px;width:auto;display:block}
+  .brand .word{white-space:nowrap;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;font-weight:500;line-height:1}
+  .brand .word small{display:block;font-size:.5rem;letter-spacing:.42em;opacity:.7;margin-top:4px}
+  .where{display:inline-block;margin-bottom:8px;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:500}
+  .photo{width:124px;height:124px;border-radius:50%;object-fit:cover;object-position:50% 18%;display:block;margin:-62px auto 0;position:relative;border:3px solid var(--parchment);box-shadow:0 0 0 1px var(--brass)}
+  .id{text-align:center;padding:16px 24px 0}
+  .name{font-family:var(--display);font-weight:400;font-size:2.35rem;line-height:1.05;margin:0;color:var(--text)}
+  .role{margin:8px 0 0;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:500}
+  .org{margin:4px 0 0;font-size:.9rem;color:var(--text)}
+  .line{margin:14px auto 0;font-size:.92rem;line-height:1.55;color:var(--text-2);max-width:34ch}
+  main{padding:24px 22px 26px}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 14px;border:1px solid rgba(22,33,44,.28);background:transparent;color:var(--text);text-decoration:none;font-family:inherit;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;line-height:1.2;cursor:pointer;transition:border-color .3s,background .3s}
+  .btn:hover{border-color:var(--text)}
+  .btn:active{transform:scale(.99)}
+  .btn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+  .btn.primary{grid-column:1/-1;background:var(--brass);border-color:var(--brass);color:var(--ink)}
+  .btn.primary:hover{background:var(--brass-2);border-color:var(--brass-2)}
+  .btn svg{width:17px;height:17px;flex:none}
+  .btn.portfolio{grid-column:1/-1;justify-content:space-between;text-align:left;padding:14px 16px;background:var(--navy);border-color:var(--navy);color:var(--stone);text-transform:none;letter-spacing:0;font-weight:300;font-size:.95rem}
+  .btn.portfolio:hover{border-color:var(--brass)}
+  .btn.portfolio b{display:block;font-family:var(--display);font-weight:400;font-size:1.25rem;line-height:1.1;color:#fff}
+  .btn.portfolio small{display:block;color:var(--slate-2);font-size:.8rem;margin-top:4px}
+  .btn.portfolio svg{color:var(--brass-2)}
+  .qr-wrap{margin:22px 0 0;padding:20px 16px 16px;border:1px solid var(--line);text-align:center;background:var(--parchment-2)}
+  .qr-title{margin:0 0 4px;font-family:var(--display);font-size:1.35rem;color:var(--text)}
+  .qr-sub{margin:0 0 14px;font-size:.85rem;color:var(--text-2);line-height:1.45}
+  #qr{display:inline-block;padding:10px;background:#fff;border:1px solid var(--brass);line-height:0}
+  #qr img,#qr canvas{display:block;width:196px;height:196px}
+  .toggle{margin:14px 0 0;display:inline-flex;border:1px solid var(--line);overflow:hidden}
+  .toggle button{white-space:nowrap;border:0;background:transparent;padding:9px 12px;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--text-2);cursor:pointer;font-family:inherit}
+  .toggle button[aria-pressed="true"]{background:var(--ink);color:var(--stone)}
+  .details{margin:22px 0 0;padding:0;list-style:none;border-top:1px solid var(--line)}
+  .details li{display:flex;justify-content:space-between;gap:16px;padding:12px 2px;border-bottom:1px solid var(--line);font-size:.9rem;align-items:baseline}
+  .details span:first-child{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);font-weight:500;flex:none}
+  .details a{color:var(--text);text-decoration:none;text-align:right;word-break:break-word}
+  .details a:hover{color:var(--brass)}
+  footer{padding:0 22px 22px;font-size:.78rem;color:var(--text-2);text-align:center;line-height:1.6}
+  footer a{color:var(--brass);text-decoration:none}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--stone);padding:10px 18px;font-size:.85rem;opacity:0;transition:opacity .2s;pointer-events:none;border:1px solid var(--brass);z-index:5}
+  .toast.show{opacity:1}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<article class="card">
+  <header>
+    <a class="brand" href="../" aria-label="Castle Horizon Group"><img src="../img/chg-mark-white.png" alt="CHG"><span class="word">Castle Horizon<small>Group</small></span></a>
+  </header>
+  <img class="photo" src="magnus.jpg" alt="Magnus Strøm" width="600" height="730">
+  <div class="id">
+    <h1 class="name" id="fullName"></h1>
+    <p class="role" id="roleTitle"></p>
+    <p class="org" id="orgName"></p>
+    <p class="line" id="tagline"></p>
+  </div>
+  <main>
+    <div class="actions">
+      <button class="btn primary" id="saveBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+        Save my contact
+      </button>
+      <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.48-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.91-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.9-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.89 9.88m8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.33.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.33 11.89-11.89 0-3.18-1.24-6.16-3.49-8.41"/></svg>
+        WhatsApp
+      </a>
+      <a class="btn" id="linkedinBtn" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        LinkedIn
+      </a>
+      <a class="btn" id="mailBtn" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="m3 7 9 6 9-6"/></svg>
+        Email
+      </a>
+      <a class="btn" id="callBtn" href="#">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        Call
+      </a>
+      <a class="btn portfolio" id="portfolioBtn" href="#">
+        <span><b>The portfolio</b><small>A coastal residential portfolio, offered discreetly</small></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+
+    <section class="qr-wrap" aria-label="QR code">
+      <p class="qr-title" id="qrTitle"></p>
+      <p class="qr-sub" id="qrSub"></p>
+      <div id="qr" role="img" aria-label="QR code"></div>
+      <div class="toggle" role="group" aria-label="QR code content">
+        <button type="button" id="modeLink" aria-pressed="true">Link to this card</button>
+        <button type="button" id="modeContact" aria-pressed="false">Direct contact</button>
+      </div>
+    </section>
+
+    <ul class="details" id="details"></ul>
+  </main>
+  <footer><span class="where">Brighton · Dubai · Oslo</span><br>Castle Horizon Group — housing, care, development and technology. <a href="../">chg.global</a></footer>
+</article>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ===== Edit here only ===== */
+const ME = {
+  firstName:"Per Magnus", lastName:"Strøm", displayName:"Magnus Strøm",
+  org:"Castle Horizon Group", title:"Founder & Managing Director",
+  tagline:"Owner of a UK group in supported and adapted housing, care, development and technology — and of the portfolio we are selling.",
+  phone:"+971 58 291 6623",
+  whatsapp:"+971 58 291 6623",
+  email:"magnus@chg.global",
+  website:"https://chg.global",
+  linkedin:"https://www.linkedin.com/in/permagnusstrom/",
+  cardUrl:"https://chg.global/magnus/",
+  portfolioUrl:"https://chg.global/portfolio",
+  city:"Dubai, United Arab Emirates",
+  note:"Met at IPS Dubai, September 2026"
+};
+/* ========================== */
+const digits=s=>(s||"").replace(/[^\d+]/g,"");
+const esc=s=>(s||"").replace(/\\/g,"\\\\").replace(/,/g,"\\,").replace(/;/g,"\\;").replace(/\n/g,"\\n");
+function vcard(){
+  const L=["BEGIN:VCARD","VERSION:3.0",`N:${esc(ME.lastName)};${esc(ME.firstName)};;;`,`FN:${esc(ME.displayName)}`,`ORG:${esc(ME.org)}`,`TITLE:${esc(ME.title)}`];
+  if(ME.phone)L.push(`TEL;TYPE=CELL,VOICE:${digits(ME.phone)}`);
+  if(ME.email)L.push(`EMAIL;TYPE=INTERNET,WORK:${ME.email}`);
+  if(ME.website)L.push(`URL:${ME.website}`);
+  if(ME.linkedin)L.push(`URL;TYPE=LinkedIn:${ME.linkedin}`);
+  if(ME.city)L.push(`ADR;TYPE=WORK:;;;${esc(ME.city)};;;`);
+  if(ME.note)L.push(`NOTE:${esc(ME.note)}`);
+  L.push("END:VCARD");return L.join("\r\n");
+}
+document.getElementById("fullName").textContent=ME.displayName;
+document.getElementById("roleTitle").textContent=ME.title;
+document.getElementById("orgName").textContent=ME.org;
+document.getElementById("tagline").textContent=ME.tagline;
+document.getElementById("linkedinBtn").href=ME.linkedin;
+document.getElementById("waBtn").href=`https://wa.me/${digits(ME.whatsapp).replace("+","")}?text=${encodeURIComponent("Hello Magnus, we met at IPS Dubai.")}`;
+document.getElementById("mailBtn").href=`mailto:${ME.email}?subject=${encodeURIComponent("Following up from IPS Dubai")}`;
+document.getElementById("callBtn").href=`tel:${digits(ME.phone)}`;
+document.getElementById("portfolioBtn").href=ME.portfolioUrl;
+document.getElementById("details").innerHTML=[
+  ["Mobile",ME.phone,`tel:${digits(ME.phone)}`],
+  ["Email",ME.email,`mailto:${ME.email}`],
+  ["Web","chg.global",ME.website],
+  ["LinkedIn","in/permagnusstrom",ME.linkedin]
+].map(([k,v,h])=>`<li><span>${k}</span><a href="${h}" ${h.startsWith("http")?'target="_blank" rel="noopener"':''}>${v}</a></li>`).join("");
+
+document.getElementById("saveBtn").addEventListener("click",()=>{
+  const blob=new Blob([vcard()],{type:"text/vcard;charset=utf-8"});const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");a.href=url;a.download="Magnus-Strom.vcf";document.body.appendChild(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),4000);toast("Contact file ready — open it to add me");
+});
+const qrEl=document.getElementById("qr");
+const hosted=/^https?:$/.test(location.protocol);
+function renderQR(t){qrEl.innerHTML="";try{new QRCode(qrEl,{text:t,width:196,height:196,colorDark:"#0B1622",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.M});}catch(e){qrEl.innerHTML='<p style="font-size:.8rem;color:#4E5B69;margin:0;line-height:196px">QR unavailable offline</p>';}}
+function setMode(m){
+  const c=m==="contact";
+  document.getElementById("modeContact").setAttribute("aria-pressed",String(c));
+  document.getElementById("modeLink").setAttribute("aria-pressed",String(!c));
+  if(c){document.getElementById("qrTitle").textContent="Scan to save my contact";document.getElementById("qrSub").textContent="Opens as a new contact on your phone — no internet needed.";renderQR(vcard());}
+  else{document.getElementById("qrTitle").textContent="Scan to open this card";document.getElementById("qrSub").textContent="Contact details, WhatsApp, LinkedIn and the portfolio, in one place.";renderQR(hosted?location.href.split("#")[0].split("?")[0]:ME.cardUrl);}
+}
+document.getElementById("modeContact").addEventListener("click",()=>setMode("contact"));
+document.getElementById("modeLink").addEventListener("click",()=>setMode("link"));
+setMode("link");
+function toast(m){const t=document.getElementById("toast");t.textContent=m;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("show"),2600);}
+</script>
+</body>
+</html>
