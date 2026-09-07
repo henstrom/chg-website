@@ -6,10 +6,10 @@ const LINKS = {
   linkedinCompany: "",    // https://www.linkedin.com/company/...
   magnus: "https://www.linkedin.com/in/permagnusstrom/",
   aksana: "",
-  marisa: "",
-  rob: "",
-  aksel: "",
-  henrik: "",
+  marisa: "https://www.linkedin.com/in/marisa-mcgreevy-rose-mcmi-aiirsm-15055a2a/",
+  rob: "https://www.linkedin.com/in/robert-clare-acib-mcbi-7315b414/",
+  aksel: "https://www.linkedin.com/in/aksel-gundersen-25b998189/",
+  henrik: "https://www.linkedin.com/in/henrik-strom-5a9a49345/",
   ulrik: "https://www.linkedin.com/in/ulrik-ferdinand-hansen-b3a4a7261/"
 };
 const PEOPLE_KEYS = ["magnus", "aksana", "marisa", "rob", "aksel", "henrik", "ulrik", "linkedinCompany"];
