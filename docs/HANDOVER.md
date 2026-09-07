@@ -30,10 +30,10 @@ Everything in this folder is the complete, working site. There is no build step 
 
 ## 2. Deploy (Cloudflare Workers with static assets)
 
-**Automatic (preferred).** `.github/workflows/deploy.yml` deploys on every push to `main`. It needs a GitHub repository
-secret `CLOUDFLARE_API_TOKEN` — create the token in the Cloudflare dashboard (My Profile → API Tokens → Create Token →
-"Edit Cloudflare Workers" template, account = Castle AgentIQ) and add it under repo Settings → Secrets and variables →
-Actions. From then on: merge to `main` → live in a minute or two. The Actions tab shows each run and any error.
+**Automatic (preferred).** The Worker is connected to the GitHub repository `Castle-AgentIQ/chg-website` through
+Cloudflare Workers Builds (dashboard → Workers & Pages → chg-global → Settings → Build). Production branch `main`,
+no build command, deploy command `npx wrangler deploy`, root directory `/`. Merge to `main` → live in a minute or two;
+pushes to other branches produce a preview URL. Each build and its log is listed on the Worker's Builds tab.
 
 **Manual.** Prerequisite: Node 18+ and access to the **Castle AgentIQ** Cloudflare account (`ef0da64eebdb2d5184dd7007e0b757af`).
 

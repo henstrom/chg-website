@@ -12,10 +12,10 @@ Static site plus one small Worker for the enquiry form. No build step, no framew
 
 ## Deploy
 
-Automatic: every push to `main` runs `.github/workflows/deploy.yml`, which deploys the Worker with wrangler.
-It needs one repository secret, `CLOUDFLARE_API_TOKEN` (Cloudflare → My Profile → API Tokens → "Edit Cloudflare Workers"
-template, scoped to the Castle AgentIQ account). Merge a PR and the site updates within a minute or two; the run
-can also be started by hand from the Actions tab.
+Automatic: the Worker is connected to this GitHub repository through Cloudflare Workers Builds
+(Cloudflare dashboard → Workers & Pages → chg-global → Settings → Build). Every push to `main` runs `npx wrangler deploy`
+on Cloudflare's side and the site updates within a minute or two; other branches get a preview URL. Build history and
+logs are under the Worker's "Deployments" and "Builds" tabs.
 
 Manual, if ever needed:
 
