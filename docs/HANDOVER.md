@@ -11,7 +11,7 @@ Everything in this folder is the complete, working site. There is no build step 
     wrangler.toml            Cloudflare config — Worker name `chg-global`, Castle AgentIQ account, KV binding
     worker.js                Handles POST /api/enquiry (form) and GET /api/enquiries (admin). Everything else → static assets
     public/                  The website (served as static assets)
-      index.html             Home: hero, group, four disciplines, buyers/sellers, portfolio plate, principles, people, contact + form
+      index.html             Home: hero, group, four disciplines, buyers/sellers, portfolio plate, principles, contact + form
       about.html             Story, operating companies, leadership (7 people with portraits)
       portfolio.html         Anonymised portfolio offering (noindex)
       privacy.html           Privacy notice (noindex)
@@ -30,7 +30,12 @@ Everything in this folder is the complete, working site. There is no build step 
 
 ## 2. Deploy (Cloudflare Workers with static assets)
 
-Prerequisite: Node 18+ and access to the **Castle AgentIQ** Cloudflare account (`ef0da64eebdb2d5184dd7007e0b757af`).
+**Automatic (preferred).** The Worker is connected to the GitHub repository `Castle-AgentIQ/chg-website` through
+Cloudflare Workers Builds (dashboard → Workers & Pages → chg-global → Settings → Build). Production branch `main`,
+no build command, deploy command `npx wrangler deploy`, root directory `/`. Merge to `main` → live in a minute or two;
+pushes to other branches produce a preview URL. Each build and its log is listed on the Worker's Builds tab.
+
+**Manual.** Prerequisite: Node 18+ and access to the **Castle AgentIQ** Cloudflare account (`ef0da64eebdb2d5184dd7007e0b757af`).
 
     cd <this folder>
     npx wrangler login          # once — opens a browser, log in to the Castle AgentIQ account
@@ -39,7 +44,7 @@ Prerequisite: Node 18+ and access to the **Castle AgentIQ** Cloudflare account (
 Expected output ends with a URL like `https://chg-global.<subdomain>.workers.dev`. Open it and check:
 
 - Home renders with the dusk terrace hero and the Cormorant/Jost type (fonts come from Google Fonts)
-- /about, /portfolio, /magnus/ all load; the QR on /magnus/ renders (library from cdnjs)
+- /about, /portfolio, /magnus/ all load; "Save my contact" on /magnus/ downloads a vCard with the photo embedded
 - Submit the enquiry form once with a test message — you should see the "Thank you" state
 
 The KV namespace `chg-enquiries` (id `75c1b8577c374e82a7ed12004421094e`) already exists on the account and is bound in wrangler.toml, so the form works from the first deploy with no further setup.
@@ -99,14 +104,14 @@ An empty person key **hides** that person's LinkedIn link rather than showing a 
 - **Portfolio anonymity.** No property names, street names, council names, unit counts, values, yields or rents anywhere on the site. The portfolio page and the card page are `noindex`. Figures only go out in the information memorandum under NDA via Rob.
 - **Reason for sale** wording is deliberate: capital to fund nationwide expansion of adapted housing. Not retirement, not a pivot.
 - **No numbers** on the group page either (the old site's "£30M / since 2018" were removed on purpose; founding year is 2019).
-- **People.** Seven portraits, all in the same navy duotone (`img/team/`). If someone's photo is replaced, run it through the same treatment — 4:5 crop, face at ~42% from top, greyscale → autocontrast → duotone from #0B1622 through #546880 to #ECE5D8. Ask Lumo/Claude for the script if needed.
+- **People.** Seven portraits, all in the same navy duotone (`img/team/`), shown only on the People page (about.html). If someone's photo is replaced, run it through the same treatment — 4:5 crop, face at ~42% from top, greyscale → autocontrast → duotone from #0B1622 through #546880 to #ECE5D8. Ask Lumo/Claude for the script if needed.
 - **Offices.** Brighton (HQ; address 6 Windsor Road, Worthing BN11 2LX), Dubai (+971 58 291 6623), Oslo (+47 911 92 082). Phone numbers only for Dubai and Oslo — no addresses.
 
 ---
 
 ## 7. The business card page (/magnus/)
 
-Self-contained page; everything editable is in the `ME` object at the bottom of `public/magnus/index.html` (name, title, phone, email, LinkedIn, card URL, portfolio URL, tagline). "Save my contact" generates a vCard in the browser; the QR toggle switches between "link to this card" and "direct contact (vCard)". Magnus's phone wallpaper QR points at `https://chg.global/magnus/`, so the page must exist at exactly that path — it does, as `public/magnus/index.html`.
+Self-contained page; everything editable is in the `ME` object at the bottom of `public/magnus/index.html` (name, title, phone, email, LinkedIn, portfolio URL, tagline). "Save my contact" generates a vCard in the browser, with a 240×240 JPEG of the portrait embedded (the `PHOTO` constant just below `ME`) so the contact lands on the phone with a picture. The same vCard is also committed as `Magnus-Strom.vcf`. The page itself has no QR code; Magnus's phone wallpaper QR points at `https://chg.global/magnus/`, so the page must exist at exactly that path — it does, as `public/magnus/index.html`.
 
 ---
 

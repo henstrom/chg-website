@@ -12,6 +12,13 @@ Static site plus one small Worker for the enquiry form. No build step, no framew
 
 ## Deploy
 
+Automatic: the Worker is connected to this GitHub repository through Cloudflare Workers Builds
+(Cloudflare dashboard → Workers & Pages → chg-global → Settings → Build). Every push to `main` runs `npx wrangler deploy`
+on Cloudflare's side and the site updates within a minute or two; other branches get a preview URL. Build history and
+logs are under the Worker's "Deployments" and "Builds" tabs.
+
+Manual, if ever needed:
+
     cd <repo root>
     npx wrangler login          # once, in a browser
     npx wrangler deploy         # → https://chg-global.<subdomain>.workers.dev
@@ -38,4 +45,4 @@ An empty LinkedIn key hides that link; an empty portfolio key sends people to th
 
 ## Business card
 
-`public/magnus/index.html` — edit the `ME` block at the bottom. The QR code points at the page's own address when hosted.
+`public/magnus/index.html` — edit the `ME` block at the bottom. "Save my contact" builds a vCard in the browser with the portrait embedded (the `PHOTO` constant, a 240×240 JPEG as base64); `Magnus-Strom.vcf` alongside it is the same card as a file.
