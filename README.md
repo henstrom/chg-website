@@ -38,4 +38,4 @@ An empty LinkedIn key hides that link; an empty portfolio key sends people to th
 
 ## Business card
 
-`public/magnus/index.html` — edit the `ME` block at the bottom. The QR code points at the page's own address when hosted.
+`public/magnus/index.html` — edit the `ME` block at the bottom. "Save my contact" builds a vCard in the browser with the portrait embedded (the `PHOTO` constant, a 240×240 JPEG as base64); `Magnus-Strom.vcf` alongside it is the same card as a file.
