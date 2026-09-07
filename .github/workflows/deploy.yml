@@ -1,0 +1,31 @@
+# Deploys chg.global to Cloudflare Workers on every push to main.
+#
+# One-time setup (Cloudflare dashboard → My Profile → API Tokens → Create Token →
+# "Edit Cloudflare Workers" template, scoped to the Castle AgentIQ account), then
+# GitHub → repo Settings → Secrets and variables → Actions → New repository secret:
+#   CLOUDFLARE_API_TOKEN = <the token>
+# The account id lives in wrangler.toml, so no other secret is needed.
+# Can also be run by hand from the Actions tab (workflow_dispatch).
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-chg-global
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: wrangler deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          wranglerVersion: "4"
+          command: deploy

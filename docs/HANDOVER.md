@@ -30,7 +30,12 @@ Everything in this folder is the complete, working site. There is no build step 
 
 ## 2. Deploy (Cloudflare Workers with static assets)
 
-Prerequisite: Node 18+ and access to the **Castle AgentIQ** Cloudflare account (`ef0da64eebdb2d5184dd7007e0b757af`).
+**Automatic (preferred).** `.github/workflows/deploy.yml` deploys on every push to `main`. It needs a GitHub repository
+secret `CLOUDFLARE_API_TOKEN` — create the token in the Cloudflare dashboard (My Profile → API Tokens → Create Token →
+"Edit Cloudflare Workers" template, account = Castle AgentIQ) and add it under repo Settings → Secrets and variables →
+Actions. From then on: merge to `main` → live in a minute or two. The Actions tab shows each run and any error.
+
+**Manual.** Prerequisite: Node 18+ and access to the **Castle AgentIQ** Cloudflare account (`ef0da64eebdb2d5184dd7007e0b757af`).
 
     cd <this folder>
     npx wrangler login          # once — opens a browser, log in to the Castle AgentIQ account
