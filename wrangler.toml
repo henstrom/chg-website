@@ -1,6 +1,6 @@
 # Castle Horizon Group — chg.global
-# Deploy from this folder:  npx wrangler deploy
-# Then add custom domains (chg.global, www.chg.global) under Workers & Pages → chg-global → Settings → Domains & Routes.
+# Deploys automatically from GitHub (Workers Builds) on every push to main.
+# Manual deploy from this folder:  npx wrangler deploy
 name = "chg-global"
 main = "worker.js"
 compatibility_date = "2026-09-01"
@@ -17,17 +17,28 @@ directory = "./public"
 binding = "ASSETS"
 html_handling = "auto-trailing-slash"
 not_found_handling = "404-page"
-run_worker_first = ["/api/*"]
+# The Worker handles the API and the NDA-gated portfolio schedule; everything else is a static asset.
+run_worker_first = ["/api/*", "/portfolio/details"]
 
-# Enquiry storage (namespace already created on the Castle AgentIQ account)
+# Files the Worker imports as text: the gated property schedule and the NDA wording (in ./gated/)
+[[rules]]
+type = "Text"
+globs = ["gated/**/*.html", "gated/**/*.txt"]
+fallthrough = true
+
+# Enquiry + NDA storage (namespace already created on the Castle AgentIQ account)
 [[kv_namespaces]]
 binding = "ENQUIRIES"
 id = "75c1b8577c374e82a7ed12004421094e"
 
 [vars]
+# General enquiries (selling / investing / other)
 ENQUIRY_TO = "hello@chg.global"
+# Portfolio enquiries and signed NDAs — the transaction adviser, with Magnus copied
+PORTFOLIO_TO = "robert.clare@innovationcapitalteam.com, magnus@chg.global"
 ENQUIRY_FROM = "Castle Horizon Group <enquiries@send.chg.global>"
+SITE_URL = "https://chg.global"
 
-# Optional secrets (set once with `npx wrangler secret put NAME`):
-#   RESEND_API_KEY  — enables email notification of enquiries (verify send.chg.global at resend.com first)
-#   ADMIN_KEY       — protects GET /api/enquiries?key=...  (lists stored enquiries)
+# Secrets (set once with `npx wrangler secret put NAME`):
+#   RESEND_API_KEY  — enables email for enquiries and NDA copies (send.chg.global verified at resend.com)
+#   ADMIN_KEY       — protects GET /api/enquiries, /api/ndas and /api/health (?key=...)

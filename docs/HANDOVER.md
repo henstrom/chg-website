@@ -13,7 +13,11 @@ Everything in this folder is the complete, working site. There is no build step 
     public/                  The website (served as static assets)
       index.html             Home: hero, group, four disciplines, buyers/sellers, portfolio plate, principles, contact + form
       about.html             Story, operating companies, leadership (7 people with portraits)
-      portfolio.html         Anonymised portfolio offering (noindex)
+      portfolio.html         The portfolio teaser, matching the one-page PDF (noindex); links to the NDA and the PDF download
+      nda.html               Non-disclosure agreement with typed e-signature → POST /api/nda (noindex)
+      files/                 Vitae-Investments-Sussex-Portfolio.pdf — the downloadable teaser
+    gated/                   NOT public. portfolio-details.html is the property schedule, served by the Worker at
+                             /portfolio/details only to signed visitors; nda.txt is the agreement wording emailed to signers
       privacy.html           Privacy notice (noindex)
       404.html               Not-found page
       styles.css             All styling. Design tokens at the top (ink/navy/stone/parchment/brass; Cormorant Garamond + Jost via Google Fonts)
@@ -84,26 +88,31 @@ The email arrives from `enquiries@chg.global` with reply-to set to the enquirer,
 
 **Fallback.** If the endpoint ever errors, the form shows the visitor a pre-filled `mailto:hello@chg.global` link with their message, so nothing is lost.
 
+**Checking Resend is live.** `https://chg.global/api/health?key=<ADMIN_KEY>` reports whether the key is set. Every stored enquiry and NDA also carries a `mail` (or `mailAdviser` / `mailSigner`) field with `sent: true` or the error Resend returned, visible through `/api/enquiries` and `/api/ndas`.
+
 ---
 
-## 5. Links that still need filling in
+## 5. The portfolio: teaser, NDA, schedule, pack
 
-All in the `LINKS` block at the top of `public/site.js`:
+The former Innovation Capital site (innovationcapital.netlify.app) has been folded into chg.global and redirects here.
 
-    portfolio:        ""   ← the separate portfolio-enquiry landing page (Magnus has the URL). Empty = the "Request the information memorandum" buttons open the enquiry form with "The portfolio" preselected. That is a fine interim state.
-    linkedinCompany:  ""   ← CHG company page on LinkedIn, if there is one
-    magnus:           filled (linkedin.com/in/permagnusstrom)
-    aksana, marisa, rob, aksel, henrik, ulrik:  ""   ← personal LinkedIn URLs
+- **Public teaser** — `public/portfolio.html` is the one-page PDF as a web page, plus the PDF itself under `public/files/`. Keep it to what the PDF says: aggregate figures and towns, no addresses, no valuations, no rent or yield.
+- **NDA** — `public/nda.html`. Same wording as the Innovation Capital agreement (Vitae Investments Ltd as disclosing party, Innovation Capital Ltd as adviser, two years, England and Wales). If the wording changes, change `gated/nda.txt` too (it is what gets emailed) and bump `NDA_VERSION` in worker.js. Signing stores `nda:<time>:<id>` in KV with name, signature, title, organisation, email, time, IP, country and user agent, emails `PORTFOLIO_TO` and the signer, and sets a 180-day cookie plus a personal link.
+- **Property schedule** — `gated/portfolio-details.html`, served at `/portfolio/details` only with a valid token. Addresses, types, units, EPCs, council arrangement; deliberately no valuations. Unit counts are from the April 2026 schedule and should be refreshed from the rent roll.
+- **Information pack** — Rob sends it outside the website after countersigning.
+- **Recipients** — `PORTFOLIO_TO` in wrangler.toml (Rob, with Magnus copied) for portfolio enquiries and NDAs; `ENQUIRY_TO` (hello@) for everything else.
+- **Referrals** — `?ref=code` on any link is carried into enquiries and NDA records.
 
-An empty person key **hides** that person's LinkedIn link rather than showing a dead one, so the site is presentable as-is. Fill in, `npx wrangler deploy`, done.
+LinkedIn URLs are in the `LINKS` block at the top of `public/site.js`; an empty key hides that person's link.
 
 ---
 
 ## 6. Content rules — please keep these
 
-- **Portfolio anonymity.** No property names, street names, council names, unit counts, values, yields or rents anywhere on the site. The portfolio page and the card page are `noindex`. Figures only go out in the information memorandum under NDA via Rob.
+- **Portfolio anonymity, in tiers.** Public pages say only what the one-page teaser says: aggregate counts (15 freeholds, 182 homes), the towns, the lease, the councils, "twenty-million-pound-plus". No addresses, no per-property figures, no rent, guide price or yield. Addresses and unit counts sit behind the NDA at /portfolio/details. Money figures only go out in the information pack via Rob. The portfolio, NDA, schedule and card pages are all `noindex`.
 - **Reason for sale** wording is deliberate: capital to fund nationwide expansion of adapted housing. Not retirement, not a pivot.
 - **No numbers** on the group page either (the old site's "£30M / since 2018" were removed on purpose; founding year is 2019).
+- **Structure wording.** Share sale of Vitae Investments Ltd. Not "share or asset sale", not a joint venture — the April Innovation Capital site said those and it was out of date.
 - **People.** Seven portraits, all in the same navy duotone (`img/team/`), shown only on the People page (about.html). If someone's photo is replaced, run it through the same treatment — 4:5 crop, face at ~42% from top, greyscale → autocontrast → duotone from #0B1622 through #546880 to #ECE5D8. Ask Lumo/Claude for the script if needed.
 - **Offices.** Brighton (HQ; address 6 Windsor Road, Worthing BN11 2LX), Dubai (+971 58 291 6623), Oslo (+47 911 92 082). Phone numbers only for Dubai and Oslo — no addresses.
 
