@@ -376,13 +376,13 @@ strong { font-weight: 500; }
 
 /* Contacts (portfolio plate, schedule) */
 .contacts { display: grid; gap: 0; border-top: 1px solid var(--line); margin-top: 2rem; }
-.contact { display: grid; grid-template-columns: 90px 1fr; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
-.contact .k { font-size: var(--label); letter-spacing: .2em; text-transform: uppercase; color: var(--brass); font-weight: 500; }
-.contact .name { font-family: var(--display); font-size: 1.4rem; line-height: 1.15; color: var(--text); }
-.contact .meta { margin-top: 6px; font-size: var(--small); color: var(--text-2); line-height: 1.7; }
-.contact .meta a:hover { color: var(--brass); }
-.dark-contacts .contacts, .dark-contacts .contact { border-color: var(--line-dark); }
-.dark-contacts .contact .name { color: var(--stone); } .dark-contacts .contact .meta { color: var(--slate-2); }
+.contact-row { display: grid; grid-template-columns: 90px 1fr; gap: 18px; padding: 20px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+.contact-row .k { font-size: var(--label); letter-spacing: .2em; text-transform: uppercase; color: var(--brass); font-weight: 500; }
+.contact-row .name { font-family: var(--display); font-size: 1.4rem; line-height: 1.15; color: var(--text); }
+.contact-row .meta { margin-top: 6px; font-size: var(--small); color: var(--text-2); line-height: 1.7; }
+.contact-row .meta a:hover { color: var(--brass); }
+.dark-contacts .contacts, .dark-contacts .contact-row { border-color: var(--line-dark); }
+.dark-contacts .contact-row .name { color: var(--stone); } .dark-contacts .contact-row .meta { color: var(--slate-2); }
 .plate .dark-contacts { align-self: end; }
 
 /* NDA */
