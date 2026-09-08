@@ -111,7 +111,7 @@ An empty person key **hides** that person's LinkedIn link rather than showing a 
 
 ## 7. The business card page (/magnus/)
 
-Self-contained page; everything editable is in the `ME` object at the bottom of `public/magnus/index.html` (name, title, phone, email, LinkedIn, portfolio URL, tagline). "Save my contact" generates a vCard in the browser, with a 240×240 JPEG of the portrait embedded (the `PHOTO` constant just below `ME`) so the contact lands on the phone with a picture. The same vCard is also committed as `Magnus-Strom.vcf`. The page itself has no QR code; Magnus's phone wallpaper QR points at `https://chg.global/magnus/`, so the page must exist at exactly that path — it does, as `public/magnus/index.html`.
+Self-contained page; everything editable is in the `ME` object at the bottom of `public/magnus/index.html` (name, title, phone, email, LinkedIn, portfolio URL, tagline, and the message templates: `whatsappText` pre-fills the WhatsApp message, `emailSubject` the email subject, `shareText` the text sent with "Share this card"). The Share button opens the phone's native share sheet; on a browser without one it copies the card's link. "Save my contact" generates a vCard in the browser, with a 240×240 JPEG of the portrait embedded (the `PHOTO` constant just below `ME`) so the contact lands on the phone with a picture. The same vCard is also committed as `Magnus-Strom.vcf`. The page itself has no QR code; Magnus's phone wallpaper QR points at `https://chg.global/magnus/`, so the page must exist at exactly that path — it does, as `public/magnus/index.html`.
 
 ---
 
