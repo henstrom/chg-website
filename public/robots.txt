@@ -4,6 +4,10 @@ Disallow: /portfolio
 Disallow: /portfolio.html
 Disallow: /privacy
 Disallow: /privacy.html
+Disallow: /nda
+Disallow: /nda.html
+Disallow: /portfolio/
+Disallow: /files/
 Disallow: /magnus/
 Disallow: /api/
 
