@@ -45,4 +45,4 @@ An empty LinkedIn key hides that link; an empty portfolio key sends people to th
 
 ## Business card
 
-`public/magnus/index.html` — edit the `ME` block at the bottom. "Save my contact" builds a vCard in the browser with the portrait embedded (the `PHOTO` constant, a 240×240 JPEG as base64); `Magnus-Strom.vcf` alongside it is the same card as a file.
+`public/magnus/index.html` — edit the `ME` block at the bottom (contact details plus the WhatsApp/email/share message templates). "Save my contact" builds a vCard in the browser with the portrait embedded (the `PHOTO` constant, a 240×240 JPEG as base64); `Magnus-Strom.vcf` alongside it is the same card as a file.
